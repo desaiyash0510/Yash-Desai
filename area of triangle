@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double findArea(int a, int b, int c) {
+
+    // Check if the triangle is valid
+    if (a + b <= c || b + c <= a || a + c <= b)
+        return 0.0;
+
+    // Heron's formula
+    double s = (a + b + c) / 2.0;
+    double area = sqrt(s * (s - a) * (s - b) * (s - c));
+
+    return area;
+}
